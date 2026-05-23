@@ -53,7 +53,7 @@ router.post("/login", async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ id: user._id }, "ganesh_march_project", {
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "5h",
     });
 
